@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daisy Decor — Bespoke Wall Finishing &amp; Interior Cladding</title>
+    <meta
+      name="description"
+      content="Daisy Decor crafts extraordinary wall finishing experiences — Art Deco panels, sculpted stone, wood cladding, and marble. Walk through our showroom."
+    />
+    <meta
+      name="keywords"
+      content="luxury wall finishing, interior cladding, marble walls, wood slat, stone cladding, bespoke panels, Art Deco, Dubai, London"
+    />
+    <meta property="og:title" content="Daisy Decor — Bespoke Wall Finishing" />
+    <meta
+      property="og:description"
+      content="A cinematic journey through luxury wall finishing. Every surface, a signature."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="assets/images/1-hero-wall.jpeg" />
+    <link rel="stylesheet" href="style.css?v=2.7" />
+  </head>
+  <body>
+    <!-- ═══ LOADER ═══════════════════════════════════════════════════════════════ -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-bg">
+        <img src="assets/images/1-hero-wall.jpeg" alt="" aria-hidden="true" />
+        <div class="loader-bg-overlay"></div>
+      </div>
+      <div class="loader-content">
+        <div class="loader-ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond">◆</span>
+          <span class="ornament-line"></span>
+        </div>
+        <div class="loader-brand">
+          <div class="loader-word-wrap">
+            <span class="loader-char">D</span>
+            <span class="loader-char">A</span>
+            <span class="loader-char">I</span>
+            <span class="loader-char">S</span>
+            <span class="loader-char">Y</span>
+            <span class="loader-char">&nbsp;</span>
+            <span class="loader-char">D</span>
+            <span class="loader-char">E</span>
+            <span class="loader-char">C</span>
+            <span class="loader-char">O</span>
+            <span class="loader-char">R</span>
+          </div>
+          <span class="loader-sub">WALL FINISHING STUDIO</span>
+        </div>
+        <div class="loader-tagline">Bespoke Wall Finishing Studio</div>
+        <div class="loader-progress-wrap">
+          <div class="loader-progress">
+            <div class="loader-bar" id="loader-bar"></div>
+          </div>
+          <span class="loader-pct" id="loader-pct">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ NAVBAR ════════════════════════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a
+          href="#room-hero"
+          class="nav-logo"
+          id="nav-logo-link"
+          aria-label="Daisy Decor — Home"
+        >
+          <img
+            src="assets/images/logo.png"
+            alt="Daisy Decor Logo"
+            class="nav-logo-img"
+          />
+        </a>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li>
+            <a href="#room-services" class="nav-link" data-room="2">Services</a>
+          </li>
+          <li>
+            <a href="#room-products" class="nav-link" data-room="3">Products</a>
+          </li>
+          <li>
+            <a href="#room-about" class="nav-link" data-room="1">About</a>
+          </li>
+          <li>
+            <a href="#room-gallery" class="nav-link" data-room="5">Gallery</a>
+          </li>
+          <li>
+            <a href="#room-contact" class="nav-link nav-link--cta" data-room="6"
+              >Enquire</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══ ROOM PROGRESS INDICATORS ════════════════════════════════════════════ -->
+    <div class="room-nav" id="room-nav" aria-label="Section navigation">
+      <button
+        class="room-dot"
+        id="dot-0"
+        data-room-index="0"
+        aria-label="Go to Welcome section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">Welcome</span>
+      </button>
+      <button
+        class="room-dot"
+        id="dot-1"
+        data-room-index="1"
+        aria-label="Go to About section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">About</span>
+      </button>
+      <button
+        class="room-dot"
+        id="dot-2"
+        data-room-index="2"
+        aria-label="Go to Services section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">Services</span>
+      </button>
+      <button
+        class="room-dot"
+        id="dot-3"
+        data-room-index="3"
+        aria-label="Go to Projects section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">Projects</span>
+      </button>
+      <button
+        class="room-dot"
+        id="dot-4"
+        data-room-index="4"
+        aria-label="Go to Why Us section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">Why Us</span>
+      </button>
+      <button
+        class="room-dot"
+        id="dot-5"
+        data-room-index="5"
+        aria-label="Go to Gallery section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">Gallery</span>
+      </button>
+      <button
+        class="room-dot"
+        id="dot-6"
+        data-room-index="6"
+        aria-label="Go to Contact section"
+      >
+        <span class="rd-pip"></span>
+        <span class="rd-label">Contact</span>
+      </button>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 1 — HERO
+     Image: 1-hero-wall.jpeg  |  Art Deco gold/black wall + arch doorway left-center
+     Doorway focal point: 33% 55%
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room" id="room-hero" data-room="0">
+      <div class="room-bg">
+        <img
+          src="assets/images/1-hero-wall.jpeg"
+          alt="Art Deco gold and charcoal geometric patterned feature wall with an arched doorway in a luxury interior"
+          class="room-bg-img"
+          data-origin="33% 55%"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="room-vignette room-vignette--hero"></div>
+        <div class="room-curtain" aria-hidden="true"></div>
+      </div>
+
+      <div class="room-content rc--center" id="hero-content">
+        <div class="hero-eyebrow">
+          <span class="he-line"></span>
+          Bespoke Wall Finishing Studio
+          <span class="he-line"></span>
+        </div>
+        <h1 class="hero-title">
+          Walk Through<br />
+          <em>Walls of Wonder</em>
+        </h1>
+        <p class="hero-subtitle">
+          We transform surfaces into signature statements.<br />
+          From Art Deco geometry to sculpted stone — every wall we craft<br />
+          becomes a defining moment in a space.
+        </p>
+        <div class="hero-ctas">
+          <a href="#room-products" class="btn btn-gold" id="hero-btn-products"
+            >Explore Our Work</a
+          >
+          <a href="#room-services" class="btn btn-ghost" id="hero-btn-services"
+            >Our Services</a
+          >
+        </div>
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <span class="hsc-line"></span>
+          <span class="hsc-text">Scroll to Enter</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 1.5 — WHO WE ARE
+     Image: 7-who-we-are.jpeg
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room" id="room-about" data-room="1">
+      <div class="room-bg">
+        <img
+          src="assets/images/7-who-we-are.jpeg"
+          alt="Luxury modern home interior with stylish furniture and warm architectural lighting"
+          class="room-bg-img"
+          loading="lazy"
+        />
+        <div class="room-vignette room-vignette--right"></div>
+      </div>
+
+      <div class="room-content rc--split" id="about-content">
+        <!-- Left Column: Catalog -->
+        <div class="about-catalog">
+          <h3 class="catalog-heading">Catalogs</h3>
+          <div class="catalog-cards">
+            <div class="catalog-item">
+              <div class="glass-panel catalog-panel" id="cat-panel-1">
+                <div class="cc-image-wrap">
+                  <img src="assets/images/catalog-1.jpg" alt="Wallpaper Catalog 1" />
+                </div>
+              </div>
+              <a href="#room-contact" class="btn cc-btn">View Catalog</a>
+            </div>
+            <div class="catalog-item">
+              <div class="glass-panel catalog-panel" id="cat-panel-2">
+                <div class="cc-image-wrap">
+                  <img src="assets/images/catalog-2.jpg" alt="Wallpaper Catalog 2" />
+                </div>
+              </div>
+              <a href="#room-contact" class="btn cc-btn">View Catalog</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Text Panel -->
+        <div class="about-info-wrap">
+          <div class="glass-panel" id="about-panel">
+            <p class="section-eyebrow">Who We Are</p>
+            <h2 class="section-title">Daisy Decor</h2>
+            <div class="about-paragraphs">
+              <p class="panel-desc">
+                Daisy Decor is a trusted provider of premium home décor and
+                interior solutions, dedicated to enhancing living and working
+                spaces with elegant, modern, and functional designs.
+              </p>
+              <p class="panel-desc">
+                Our extensive collection includes 3D wallpapers, customized
+                wallpapers, sticker wallpapers, window blinds, PVC flooring,
+                false ceilings, WPC panels, artificial grass, PVC Furniture,
+                glass films, and a wide range of innovative interior décor
+                products.
+              </p>
+              <p class="panel-desc">
+                Beyond offering high-quality products, Daisy Decor provides
+                expert guidance and personalized recommendations to ensure every
+                space reflects comfort, style, and lasting beauty. Our focus is
+                on quality craftsmanship and complete customer satisfaction.
+              </p>
+            </div>
+            <a href="#room-contact" class="btn btn-ghost about-contact-btn">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 2 — SERVICES
+     Image: 2-service-wall.jpeg  |  Warm walnut wood slat wall + console + corridor right
+     Doorway focal point: 82% 50%
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room" id="room-services" data-room="2">
+      <div class="room-bg">
+        <img
+          src="assets/images/2-service-wall.jpeg"
+          alt="Warm walnut wood slat feature wall with a console table in a modern luxury corridor"
+          class="room-bg-img"
+          data-origin="82% 50%"
+          loading="lazy"
+        />
+        <div class="room-vignette room-vignette--left"></div>
+        <div class="room-curtain" aria-hidden="true"></div>
+      </div>
+
+      <div class="room-content rc--split" id="services-content">
+        <!-- Left Column: Filters Sidebar -->
+        <div class="services-sidebar-wrap">
+          <div class="glass-panel" id="services-filter-panel">
+            <p class="section-eyebrow">Services</p>
+            <h2 class="section-title">Categories</h2>
+            <div class="filter-list">
+              <button class="filter-btn is-active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="wallpaper">Wallpaper</button>
+              <button class="filter-btn" data-filter="customized-wallpaper">Customized Wallpaper</button>
+              <button class="filter-btn" data-filter="marble-sheet">Marble Sheet</button>
+              <button class="filter-btn" data-filter="foam-sheet">Foam Sheet</button>
+              <button class="filter-btn" data-filter="flooring-sheet">Flooring Sheet</button>
+              <button class="filter-btn" data-filter="carpet">Carpet</button>
+              <button class="filter-btn" data-filter="pu-stone">PU Stone</button>
+              <button class="filter-btn" data-filter="3d-wall-panel">3D Wall Panel</button>
+              <button class="filter-btn" data-filter="mosaic-acrylic">Mosaic Acrylic</button>
+              <button class="filter-btn" data-filter="pvc-wpc">PVC / WPC</button>
+              <button class="filter-btn" data-filter="glass-film">Glass Film</button>
+              <button class="filter-btn" data-filter="moulding">Moulding</button>
+              <button class="filter-btn" data-filter="mosaic-glass">Mosaic Glass</button>
+              <button class="filter-btn" data-filter="grass">Grass</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Services Grid -->
+        <div class="services-grid-wrap">
+          <div class="glass-panel" id="services-items-panel">
+            <div class="services-scroll-container">
+              <div class="services-grid" id="services-grid">
+                <div class="service-card" data-category="wallpaper">
+                  <img src="assets/service-cards/s1.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="wallpaper">
+                  <img src="assets/service-cards/s2.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="wallpaper">
+                  <img src="assets/service-cards/s3.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="customized-wallpaper">
+                  <img src="assets/service-cards/s4.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="customized-wallpaper">
+                  <img src="assets/service-cards/s5.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="customized-wallpaper">
+                  <img src="assets/service-cards/s6.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="marble-sheet">
+                  <img src="assets/service-cards/s7.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="marble-sheet">
+                  <img src="assets/service-cards/s8.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="glass-film">
+                  <img src="assets/service-cards/s9.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="foam-sheet">
+                  <img src="assets/service-cards/s10.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="mosaic-glass">
+                  <img src="assets/service-cards/s11.png" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="mosaic-glass">
+                  <img src="assets/service-cards/s12.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="pvc-wpc">
+                  <img src="assets/service-cards/s13.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="pvc-wpc">
+                  <img src="assets/service-cards/s14.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="glass-film">
+                  <img src="assets/service-cards/s15.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="mosaic-acrylic">
+                  <img src="assets/service-cards/s16.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="mosaic-acrylic">
+                  <img src="assets/service-cards/s17.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="3d-wall-panel">
+                  <img src="assets/service-cards/s18.png" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="3d-wall-panel">
+                  <img src="assets/service-cards/s19.png" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="pu-stone">
+                  <img src="assets/service-cards/s20.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="pu-stone">
+                  <img src="assets/service-cards/s21.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="grass">
+                  <img src="assets/service-cards/s22.png" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="grass">
+                  <img src="assets/service-cards/s23.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="carpet">
+                  <img src="assets/service-cards/s24.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="carpet">
+                  <img src="assets/service-cards/s25.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="flooring-sheet">
+                  <img src="assets/service-cards/s26.png" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="flooring-sheet">
+                  <img src="assets/service-cards/s27.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="foam-sheet">
+                  <img src="assets/service-cards/s28.jpg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="moulding">
+                  <img src="assets/service-cards/s29.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="moulding">
+                  <img src="assets/service-cards/s30.jpeg" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+                <div class="service-card" data-category="all">
+                  <img src="assets/service-cards/s31.avif" alt="Service Card Image" class="sc-img" loading="lazy">
+                  <div class="sc-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 3 — PROJECTS
+     Image: 3-projects-wall.jpeg  |  Stone cladding wall + corridor left-center
+     Doorway focal point: 78% 45%
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 3 — PRODUCTS
+     Image: 3-projects-wall.jpeg  |  Natural stone cladding + illuminated corridor right
+     Doorway focal point: 78% 45%
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room" id="room-products" data-room="3">
+      <div class="room-bg">
+        <img
+          src="assets/images/3-projects-wall.jpeg"
+          alt="Luxury natural ledger stone cladding feature wall with illuminated corridor passage and soft accent lighting"
+          class="room-bg-img"
+          data-origin="78% 45%"
+          loading="lazy"
+        />
+        <div class="room-vignette room-vignette--right"></div>
+        <div class="room-curtain" aria-hidden="true"></div>
+      </div>
+
+      <div class="room-content rc--center" id="products-content">
+        <div class="glass-panel products-panel" id="products-panel">
+          <div class="products-header">
+            <p class="section-eyebrow section-eyebrow--center">Our Collection</p>
+            <h2 class="section-title section-title--white section-title--center">Premium <em>Products</em></h2>
+          </div>
+
+          <div class="products-list-wrapper">
+            <div class="products-list">
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps1.jpg" alt="Wallpaper" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Wallpaper</h3>
+                  <p class="prd-desc">Premium 3D wallpapers for luxury interiors.</p>
+                  <button class="btn btn-ghost prd-btn" id="btn-view-wallpaper">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps2.jpeg" alt="Customized Wallpaper" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Customized Wallpaper</h3>
+                  <p class="prd-desc">Premium 3D & customized wallpapers for luxury interiors.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps3.jpg" alt="Marble Sheet" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Marble Sheet</h3>
+                  <p class="prd-desc">Durable, waterproof & modern flooring solutions.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps4.jpg" alt="Foam Sheet" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Foam Sheet</h3>
+                  <p class="prd-desc">Stylish false ceiling design with premium finishing.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps5.jpeg" alt="Flooring Sheet" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Flooring Sheet</h3>
+                  <p class="prd-desc">High-quality WPC panels for modern interiors.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps6.jpeg" alt="Carpet" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Carpet</h3>
+                  <p class="prd-desc">Elegant carpets for indoor decoration.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps7.png" alt="Grass" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Grass</h3>
+                  <p class="prd-desc">Maintenance-free green solutions for indoor & outdoor spaces.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps8.png" alt="PU Stone" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">PU Stone</h3>
+                  <p class="prd-desc">Durable and elegant stone solutions for flooring and decoration.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps9.png" alt="3D Wall Panel" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">3D Wall Panel</h3>
+                  <p class="prd-desc">Stylish 3D wall panels for modern interior designs.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps10.jpg" alt="Mosaic Acrylic" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Mosaic Acrylic</h3>
+                  <p class="prd-desc">Premium mosaic acrylic designs for elegant spaces.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps11.png" alt="Mosaic Glass" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Mosaic Glass</h3>
+                  <p class="prd-desc">Stylish mosaic glass panels for decorative walls.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps12.png" alt="PVC/WPC" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">PVC/WPC</h3>
+                  <p class="prd-desc">High-quality PVC/WPC sheets for durable interiors.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps13.png" alt="Glass Film" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Glass Film</h3>
+                  <p class="prd-desc">Elegant and decorative glass films for windows & partitions.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+              <article class="product-showcase">
+                <div class="prd-img-wrap">
+                  <img src="assets/product-section/product-bg/ps14.jpeg" alt="Molding" class="prd-img" loading="lazy">
+                </div>
+                <div class="prd-info">
+                  <h3 class="prd-title">Moulding</h3>
+                  <p class="prd-desc">Premium decorative mouldings that enhance walls, ceilings, and interiors with a stylish finish.</p>
+                  <button class="btn btn-ghost prd-btn">View More</button>
+                </div>
+              </article>
+            </div>
+          </div>
+          
+          <div class="products-scroll-indicator" id="products-scroll-indicator">
+            <span class="indicator-text">Scroll</span>
+            <div class="indicator-line"></div>
+          </div>
+
+        </div>
+
+        <!-- WALLPAPER DETAILS PANEL -->
+        <div class="glass-panel wallpaper-details-panel" id="wallpaper-details-panel">
+          
+          <div class="wallpaper-details-header">
+            <button class="back-arrow-btn" id="close-wallpaper-details" aria-label="Back to Products">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+              <span>Back</span>
+            </button>
+          </div>
+          
+          <div class="wallpaper-details-scroll">
+            <div class="details-intro">
+              <p class="section-eyebrow section-eyebrow--center">Exclusive Wall Décor</p>
+              <h2 class="section-title section-title--white section-title--center">Redefine Your Space<br>With <em>Customized</em> Wallpapers</h2>
+              <p class="details-desc">At Daisy Decor, we create premium customized wallpapers that transform ordinary walls into stunning design statements.</p>
+            </div>
+
+            <div class="wallpaper-grid">
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">591001</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall1.jpg" alt="Wallpaper 591001" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">18074</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall2.jpg" alt="Wallpaper 18074" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">18076</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall3.jpg" alt="Wallpaper 18076" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">591001</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall4.jpg" alt="Wallpaper 591001" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">591007</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall5.jpg" alt="Wallpaper 591007" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">570101</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall6.jpg" alt="Wallpaper 570101" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">181103</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall7.jpg" alt="Wallpaper 181103" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">570603</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall8.jpg" alt="Wallpaper 570603" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <span class="wall-tag">181503</span>
+                  <img src="assets/product-section/wallpaper-sec-imgs/wall9.jpg" alt="Wallpaper 181503" class="wall-img" loading="lazy">
+                  <span class="wall-label">Panipuri</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 4 — WHY CHOOSE US
+     Image: 4-why-chooseus-wall.jpeg  |  Terracotta/sage sculptural wave + arch corridor right
+     Doorway focal point: 82% 50%
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room" id="room-whyus" data-room="4">
+      <div class="room-bg">
+        <img
+          src="assets/images/4-why-chooseus-wall.jpeg"
+          alt="Sculptural terracotta and sage organic wave relief wall with a series of arched corridor passages"
+          class="room-bg-img"
+          data-origin="82% 50%"
+          loading="lazy"
+        />
+        <div class="room-vignette room-vignette--bottom"></div>
+        <div class="room-curtain" aria-hidden="true"></div>
+      </div>
+
+      <div class="room-content rc--bottom" id="whyus-content">
+        <div class="whyus-header">
+          <p class="section-eyebrow section-eyebrow--center">
+            The Daisy Decor Difference
+          </p>
+          <h2 class="section-title section-title--center section-title--white">
+            Where Precision<br />Meets <em>Artistry</em>
+          </h2>
+        </div>
+        <div class="whyus-cards">
+          <div class="why-card" id="why-1">
+            <span class="wc-num">01</span>
+            <h3>15+ Years of Mastery</h3>
+            <p>
+              A decade and a half refining our craft across residential,
+              hospitality, and commercial projects worldwide.
+            </p>
+          </div>
+          <div class="why-card" id="why-2">
+            <span class="wc-num">02</span>
+            <h3>Ethical Sourcing</h3>
+            <p>
+              Every material sourced with full provenance — certified quarries
+              and sustainable mills only.
+            </p>
+          </div>
+          <div class="why-card" id="why-3">
+            <span class="wc-num">03</span>
+            <h3>White-Glove Installation</h3>
+            <p>
+              Our craftsmen are trained in-house. No subcontractors — just
+              skilled hands and your trust.
+            </p>
+          </div>
+          <div class="why-card" id="why-4">
+            <span class="wc-num">04</span>
+            <h3>Design Consultation</h3>
+            <p>
+              Each project begins with an immersive consultation — mood boards,
+              material samples, spatial studies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 5 — GALLERY
+     Image: 5-gallery-wall.jpeg  |  Dark wood slat with gold geometric accent light
+     Doorway focal point: 35% 65% (lit room at corridor end)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room" id="room-gallery" data-room="5">
+      <div class="room-bg">
+        <img
+          src="assets/images/5-gallery-wall.jpeg"
+          alt="Dark charcoal wood slat wall with geometric gold accent light cuts in a luxury corridor leading to a warmly lit room"
+          class="room-bg-img"
+          data-origin="35% 65%"
+          loading="lazy"
+        />
+        <div class="room-vignette room-vignette--dark"></div>
+        <div class="room-curtain" aria-hidden="true"></div>
+      </div>
+
+      <div class="room-content rc--center" id="gallery-content">
+        <div class="gallery-text">
+          <p class="section-eyebrow section-eyebrow--center">Visual Showcase</p>
+          <h2 class="section-title section-title--white gallery-title">
+            The Daisy Decor<br /><em>Gallery</em>
+          </h2>
+          <p class="gallery-sub">
+            Each installation, a confluence of material, light, and
+            intention.<br />
+            A surface that endures beyond the moment of its making.
+          </p>
+          <div class="gallery-thumbs">
+            <figure class="gt-fig" id="gt-1">
+              <img
+                src="assets/images/1-hero-wall.jpeg"
+                alt="Art Deco geometric gold wall panel"
+                loading="lazy"
+              />
+              <figcaption>Art Deco Series</figcaption>
+            </figure>
+            <figure class="gt-fig" id="gt-2">
+              <img
+                src="assets/images/2-service-wall.jpeg"
+                alt="Walnut wood slat wall"
+                loading="lazy"
+              />
+              <figcaption>Walnut Slat</figcaption>
+            </figure>
+            <figure class="gt-fig" id="gt-3">
+              <img
+                src="assets/images/4-why-chooseus-wall.jpeg"
+                alt="Sculptural wave wall"
+                loading="lazy"
+              />
+              <figcaption>Sculptural Relief</figcaption>
+            </figure>
+            <figure class="gt-fig" id="gt-4">
+              <img
+                src="assets/images/6-contact-wall.jpeg"
+                alt="Marble feature wall"
+                loading="lazy"
+              />
+              <figcaption>Calacatta Marble</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 6 — CONTACT  (last room — no exit zoom)
+     Image: 6-contact-wall.jpeg  |  Grand Calacatta marble + gold frame + green veining
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room room--last" id="room-contact" data-room="6">
+      <div class="room-bg">
+        <img
+          src="assets/images/6-contact-wall.jpeg"
+          alt="Grand Calacatta marble feature wall with emerald green veining in a gold-framed luxury lobby"
+          class="room-bg-img"
+          data-origin="72% 48%"
+          loading="lazy"
+        />
+        <div class="room-vignette room-vignette--contact"></div>
+      </div>
+
+      <div class="room-content rc--split" id="contact-content">
+        <!-- Left: info -->
+        <div class="contact-info">
+          <p class="section-eyebrow">Begin Your Project</p>
+          <h2 class="section-title contact-title">
+            Let's Create<br />Something<br /><em>Extraordinary</em>
+          </h2>
+          <div class="contact-details">
+            <div class="cd-row" id="cd-studio">
+              <span class="cd-label">Studio</span>
+              <span class="cd-value">D3 Design District, Dubai, UAE</span>
+            </div>
+            <div class="cd-row" id="cd-email">
+              <span class="cd-label">Email</span>
+              <a href="mailto:hello@daisydecor.com" class="cd-value cd-link"
+                >hello@daisydecor.com</a
+              >
+            </div>
+            <div class="cd-row" id="cd-phone">
+              <span class="cd-label">Phone</span>
+              <a href="tel:+97141234567" class="cd-value cd-link"
+                >+971 4 123 4567</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form-wrap">
+          <form
+            class="contact-form"
+            id="contact-form"
+            novalidate
+            method="POST"
+            action="index.php"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Full Name</label>
+                <input
+                  type="text"
+                  id="f-name"
+                  name="name"
+                  placeholder="Alexandra Monroe"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email Address</label>
+                <input
+                  type="email"
+                  id="f-email"
+                  name="email"
+                  placeholder="you@email.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-service">Service Interest</label>
+              <select id="f-service" name="service">
+                <option value="">Select a service…</option>
+                <option value="wood">Wood Cladding</option>
+                <option value="stone">Stone Cladding</option>
+                <option value="marble">Marble Finishing</option>
+                <option value="bespoke">Bespoke Panels</option>
+                <option value="full">Full Interior Package</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-vision">Your Vision</label>
+              <textarea
+                id="f-vision"
+                name="vision"
+                rows="4"
+                placeholder="Tell us about your space and what you envision…"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-gold btn-full"
+              id="form-submit"
+            >
+              <span class="btn-text">Send Enquiry</span>
+              <span class="btn-icon">→</span>
+            </button>
+            <p class="form-success" id="form-success" aria-live="polite"></p>
+            <p class="form-note">
+              We respond within 24 hours. Your details are never shared.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img
+            src="assets/images/logo.png"
+            alt="Daisy Decor Logo"
+            class="footer-logo-img"
+          />
+          <p class="footer-tag">Surfaces that speak. Spaces that endure.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#room-services">Services</a>
+          <a href="#room-products">Products</a>
+          <a href="#room-about">About</a>
+          <a href="#room-gallery">Gallery</a>
+          <a href="#room-contact">Contact</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Daisy Decor. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Quick Contact Widget -->
+    <div class="contact-fab-container" id="contact-fab-container">
+      <div class="contact-fab-buttons">
+        <!-- Call Button -->
+        <a
+          href="tel:+97141234567"
+          class="fab-btn fab-btn--call"
+          aria-label="Call Us Now"
+        >
+          <span class="fab-tooltip">Call Now</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+        </a>
+        <!-- WhatsApp Button -->
+        <a
+          href="https://wa.me/97141234567"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fab-btn fab-btn--whatsapp"
+          aria-label="Chat on WhatsApp"
+        >
+          <span class="fab-tooltip">WhatsApp</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+            />
+          </svg>
+        </a>
+      </div>
+      <!-- Main Toggle Button -->
+      <button
+        class="fab-toggle"
+        id="fab-toggle"
+        aria-label="Toggle contact options"
+        aria-expanded="false"
+      >
+        <svg
+          class="icon-chat"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+          />
+        </svg>
+        <svg
+          class="icon-close"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ═══ SCRIPTS ═══════════════════════════════════════════════════════════════ -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

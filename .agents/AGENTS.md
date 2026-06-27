@@ -8,4 +8,9 @@ IMPORTANT FILE MANAGEMENT RULES
 - If a new file is necessary, explain why it is needed.
 - Never leave unused or orphaned files in the project.
 - Maintain a clean file structure and avoid file duplication.
-</RULE[file_management]>
+- Use minimum tokens.
+- Avoid assumptions and hallucinations.
+- Preserve current layout, theme and responsiveness.
+- Ask for clarification if requirements are unclear.
+- Keep code modular and production-ready.
+  </RULE[file_management]>

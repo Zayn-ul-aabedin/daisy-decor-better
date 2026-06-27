@@ -434,6 +434,189 @@ function initProductDetails() {
                 </div>
               </article>`;
           });
+        } else if (p.title === "Carpet") {
+          eyebrowEl.innerHTML = "Luxury Floor Décor";
+          titleEl.innerHTML = "Premium Carpets for Elegant Interiors";
+          descEl.innerHTML =
+            "Add warmth, comfort, and style to your interiors with Daisy Decor’s premium carpet collection. Our carpets are designed to enhance indoor spaces with rich textures, modern patterns, and long-lasting quality, perfect for homes, offices, hotels, and commercial spaces.";
+          const imgs = [
+            "assets/product-section/carpet-imgs/car1.webp",
+            "assets/product-section/carpet-imgs/car2.jpeg",
+            "assets/service-cards/s25.jpeg",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="Carpet ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "Grass") {
+          eyebrowEl.innerHTML = "Green Décor Solutions";
+          titleEl.innerHTML = "Premium Artificial Grass for All Spaces";
+          descEl.innerHTML =
+            "Bring nature-inspired beauty to your surroundings with Daisy Decor’s high-quality artificial grass. Designed for both indoor and outdoor use, our grass solutions offer a lush green look without watering, trimming, or maintenance. Perfect for homes, balconies, gardens, terraces, offices, and commercial spaces.";
+          const imgs = [
+            "assets/service-cards/grass3.jpeg",
+            "assets/service-cards/s22.png",
+            "assets/service-cards/s23.jpg",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="Grass ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "PU Stone") {
+          eyebrowEl.innerHTML = "Luxury Stone Finish";
+          titleEl.innerHTML = "Premium PU Stone for Modern Interiors";
+          descEl.innerHTML =
+            "Daisy Decor brings you high-quality PU Stone panels that combine the beauty of natural stone with lightweight durability.";
+          const imgs = [
+            "assets/product-section/pu-imgs/npu3.jpg",
+            "assets/product-section/pu-imgs/npu4.jpg",
+            "assets/product-section/pu-imgs/npu5.jpg",
+            "assets/product-section/pu-imgs/npu6.jpg",
+            "assets/product-section/pu-imgs/npu7.jpg",
+            "assets/product-section/pu-imgs/npu8.jpg",
+            "assets/product-section/pu-imgs/npu9.jpg",
+            "assets/service-cards/s20.jpg",
+            "assets/service-cards/s21.jpg",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="PU Stone ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "3D Wall Panel") {
+          eyebrowEl.innerHTML = "Modern Wall Décor";
+          titleEl.innerHTML = "Transform Your Space with 3D Wall Panels";
+          descEl.innerHTML =
+            "Daisy Decor offers premium 3D wall panels designed to add depth, texture, and elegance to your interiors.";
+          const imgs = [
+            "assets/product-section/3d-imgs/3dn13.png",
+            "assets/product-section/3d-imgs/3dn14.png",
+            "assets/product-section/3d-imgs/3dn15.png",
+            "assets/product-section/3d-imgs/3dn16.png",
+            "assets/service-cards/s18.png",
+            "assets/service-cards/s19.png",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="3D Wall Panel ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "Mosaic Acrylic") {
+          eyebrowEl.innerHTML = "Luxury Surface Décor";
+          titleEl.innerHTML = "Enhance Your Interiors with Mosaic Acrylic Panels";
+          descEl.innerHTML =
+            "Daisy Decor offers premium mosaic acrylic panels that bring a refined and contemporary touch to your interiors.";
+          const imgs = [
+            "assets/service-cards/s16.jpeg",
+            "assets/service-cards/s17.jpg",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="Mosaic Acrylic ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "Mosaic Glass") {
+          eyebrowEl.innerHTML = "Elegant Glass Décor";
+          titleEl.innerHTML = "Enhance Your Walls with Mosaic Glass Panels";
+          descEl.innerHTML =
+            "Daisy Decor presents premium mosaic glass panels designed to bring elegance, shine, and artistic beauty to your interiors.";
+          const imgs = [
+            "assets/product-section/mosaic-glass/mo3.jpg",
+            "assets/product-section/mosaic-glass/mo4.jpg",
+            "assets/product-section/mosaic-glass/mo5.jpg",
+            "assets/product-section/mosaic-glass/mo6.jpeg",
+            "assets/product-section/mosaic-glass/mo7.jpg",
+            "assets/product-section/mosaic-glass/mo8.jpg",
+            "assets/product-section/mosaic-glass/mo9.webp",
+            "assets/service-cards/s11.png",
+            "assets/service-cards/s12.jpg",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="Mosaic Glass ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "PVC/WPC") {
+          eyebrowEl.innerHTML = "Modern Interior Panels";
+          titleEl.innerHTML = "Strong, Stylish & Long-Lasting PVC / WPC Solutions";
+          descEl.innerHTML =
+            "Daisy Decor offers premium PVC and WPC sheets designed for modern and durable interiors.";
+          const imgs = [
+            "assets/product-section/pvc-imgs/npvc1.png",
+            "assets/product-section/pvc-imgs/npvc2.png",
+            "assets/product-section/pvc-imgs/npvc3.png",
+            "assets/product-section/pvc-imgs/npvc4.png",
+            "assets/product-section/pvc-imgs/npvc5.png",
+            "assets/product-section/pvc-imgs/npvc6.png",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="PVC/WPC ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "Glass Film") {
+          eyebrowEl.innerHTML = "Modern Glass Décor";
+          titleEl.innerHTML = "Enhance Privacy & Style with Premium Glass Films";
+          descEl.innerHTML =
+            "Daisy Decor offers a wide range of premium glass films designed to enhance privacy while adding elegance to your interiors.";
+          const imgs = [
+            "assets/product-section/product-bg/ps13.png",
+            "assets/product-section/glass-film-imgs/g2.png",
+            "assets/product-section/glass-film-imgs/g3.png",
+            "assets/product-section/glass-film-imgs/g4.png",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="Glass Film ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
+        } else if (p.title === "Moulding") {
+          eyebrowEl.innerHTML = "Interior Enhancement";
+          titleEl.innerHTML = "Transform Your Space with Stylish Moldings";
+          descEl.innerHTML =
+            "Daisy Decor provides premium quality decorative moldings that add depth, elegance, and character to walls, ceilings, and interiors.";
+          const imgs = [
+            "assets/product-section/moulding-imgs/molding1.jpg",
+            "assets/product-section/moulding-imgs/molding2.jpg",
+            "assets/product-section/moulding-imgs/molding3.png",
+            "assets/product-section/moulding-imgs/molding4.png",
+            "assets/product-section/moulding-imgs/molding5.png",
+            "assets/product-section/moulding-imgs/molding6.png",
+          ];
+          imgs.forEach((img, i) => {
+            gridContainer.innerHTML += `
+              <article class="wall-item">
+                <div class="wall-img-wrap">
+                  <img src="${img}" alt="Moulding ${i + 1}" class="wall-img" loading="lazy">
+                </div>
+              </article>`;
+          });
         } else {
           // Generic single image or duplicated to look good
           for (let i = 0; i < 3; i++) {

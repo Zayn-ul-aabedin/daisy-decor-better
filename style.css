@@ -2118,8 +2118,8 @@ em {
    PRODUCTS PANEL (ROOM 3)
    ════════════════════════════════════════════════════════════ */
 .products-panel {
-  width: 100% !important;
-  max-width: 1400px !important;
+  width: calc(100% + 8px) !important;
+  max-width: calc(1500px - 88px) !important;
   height: calc(100vh - var(--nav-h) - 14px);
   margin-top: calc(var(--nav-h) - 26px);
   margin-bottom: 5px;
@@ -2386,14 +2386,14 @@ em {
    ════════════════════════════════════════════════════════════ */
 .product-details-panel {
   position: absolute;
-  top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  margin: auto;
-  width: 100% !important;
-  max-width: 1400px !important;
-  height: 90vh;
+  margin-inline: auto;
+  margin-top: calc(var(--nav-h) - 26px);
+  margin-bottom: 5px;
+  width: calc(100% - 88px) !important;
+  max-width: calc(1500px - 88px) !important;
+  height: calc(100vh - var(--nav-h) - 14px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

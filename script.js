@@ -41,6 +41,7 @@ requestAnimationFrame(runLenisLoop);
    ════════════════════════════════════════════════════════════ */
 let currentRoomIndex = 0;
 let isAnimatingScroll = false;
+let queuedScrollDir = 0;
 let roomLabelTimeout;
 const rooms = document.querySelectorAll(".room");
 
@@ -251,24 +252,50 @@ function scrollToRoom(index) {
   currentRoomIndex = index;
   updateActiveIndicators(index);
 
-  // Safety fallback: force-unlock scroll after 1.5 seconds in case Lenis fails to fire onComplete (e.g. if interrupted)
+  // Safety fallback: force-unlock scroll after a generous timeout (2500ms) in case animations hang
   let safetyTimeout = setTimeout(() => {
     isAnimatingScroll = false;
-  }, 1500);
+  }, 2500);
 
   lenis.scrollTo(rooms[index], {
     lock: true, // Prevents user scrolling/momentum from interrupting the transition
     duration: 1.0, // Quick snap duration
     ease: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Cinematic snap ease
     onComplete: () => {
-      clearTimeout(safetyTimeout);
-      // Cooldown timer to prevent trackpad momentum from double-firing in Chrome
-      setTimeout(() => {
-        isAnimatingScroll = false;
-      }, 350);
+      // Animate active room content in and get the timeline
+      const tl = animateRoomIn(index);
 
-      // Animate active room content in
-      animateRoomIn(index);
+      // Wait for the GSAP entrance animation to fully finish before unlocking the scroll state
+      if (tl && tl.duration() > 0) {
+        tl.eventCallback("onComplete", () => {
+          clearTimeout(safetyTimeout);
+          // Tiny cooldown (50ms) to safely eat any residual trackpad momentum after animations finish
+          setTimeout(() => {
+            isAnimatingScroll = false;
+            if (queuedScrollDir !== 0) {
+              let dir = queuedScrollDir;
+              queuedScrollDir = 0;
+              if (dir === -1 && currentRoomIndex > 0)
+                scrollToRoom(currentRoomIndex - 1);
+              else if (dir === 1 && currentRoomIndex < rooms.length - 1)
+                scrollToRoom(currentRoomIndex + 1);
+            }
+          }, 50);
+        });
+      } else {
+        clearTimeout(safetyTimeout);
+        setTimeout(() => {
+          isAnimatingScroll = false;
+          if (queuedScrollDir !== 0) {
+            let dir = queuedScrollDir;
+            queuedScrollDir = 0;
+            if (dir === -1 && currentRoomIndex > 0)
+              scrollToRoom(currentRoomIndex - 1);
+            else if (dir === 1 && currentRoomIndex < rooms.length - 1)
+              scrollToRoom(currentRoomIndex + 1);
+          }
+        }, 50);
+      }
     },
   });
 }
@@ -517,7 +544,8 @@ function initProductDetails() {
           });
         } else if (p.title === "Mosaic Acrylic") {
           eyebrowEl.innerHTML = "Luxury Surface Décor";
-          titleEl.innerHTML = "Enhance Your Interiors with Mosaic Acrylic Panels";
+          titleEl.innerHTML =
+            "Enhance Your Interiors with Mosaic Acrylic Panels";
           descEl.innerHTML =
             "Daisy Decor offers premium mosaic acrylic panels that bring a refined and contemporary touch to your interiors.";
           const imgs = [
@@ -558,7 +586,8 @@ function initProductDetails() {
           });
         } else if (p.title === "PVC/WPC") {
           eyebrowEl.innerHTML = "Modern Interior Panels";
-          titleEl.innerHTML = "Strong, Stylish & Long-Lasting PVC / WPC Solutions";
+          titleEl.innerHTML =
+            "Strong, Stylish & Long-Lasting PVC / WPC Solutions";
           descEl.innerHTML =
             "Daisy Decor offers premium PVC and WPC sheets designed for modern and durable interiors.";
           const imgs = [
@@ -579,7 +608,8 @@ function initProductDetails() {
           });
         } else if (p.title === "Glass Film") {
           eyebrowEl.innerHTML = "Modern Glass Décor";
-          titleEl.innerHTML = "Enhance Privacy & Style with Premium Glass Films";
+          titleEl.innerHTML =
+            "Enhance Privacy & Style with Premium Glass Films";
           descEl.innerHTML =
             "Daisy Decor offers a wide range of premium glass films designed to enhance privacy while adding elegance to your interiors.";
           const imgs = [
@@ -680,6 +710,8 @@ function initScrollJack() {
     ".services-scroll-container",
     ".products-list-wrapper",
     ".product-details-scroll",
+    ".gallery-scroll-container",
+    ".gallery-carousel",
   ];
 
   const isInsideScrollable = (target) => {
@@ -688,6 +720,13 @@ function initScrollJack() {
 
   // Capture-phase listener: block default scroll everywhere EXCEPT inside scrollable panels and form fields
   const blockScroll = (e) => {
+    // SCROLL LEAKAGE FIX: If a transition is active, completely kill the event before Lenis can see it!
+    if (typeof isAnimatingScroll !== "undefined" && isAnimatingScroll) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      return;
+    }
+
     const target = e.target;
     if (!target || !target.tagName) return;
     if (
@@ -718,13 +757,21 @@ function initScrollJack() {
     onUp: (self) => {
       // Extra guard: ignore if event target is inside a scrollable panel
       if (self.event && isInsideScrollable(self.event.target)) return;
-      if (!isAnimatingScroll && currentRoomIndex > 0) {
+      if (isAnimatingScroll) {
+        queuedScrollDir = -1;
+        return;
+      }
+      if (currentRoomIndex > 0) {
         scrollToRoom(currentRoomIndex - 1);
       }
     },
     onDown: (self) => {
       if (self.event && isInsideScrollable(self.event.target)) return;
-      if (!isAnimatingScroll && currentRoomIndex < rooms.length - 1) {
+      if (isAnimatingScroll) {
+        queuedScrollDir = 1;
+        return;
+      }
+      if (currentRoomIndex < rooms.length - 1) {
         scrollToRoom(currentRoomIndex + 1);
       }
     },
@@ -749,7 +796,10 @@ function initScrollJack() {
         tolerance: 15,
         preventDefault: false, // Absolutely allow native scrolling
         onUp: () => {
-          if (isAnimatingScroll) return;
+          if (isAnimatingScroll) {
+            queuedScrollDir = -1;
+            return;
+          }
 
           // Trigger on first overscroll if at the absolute top (5px threshold)
           if (el.scrollTop > 5) return;
@@ -759,7 +809,10 @@ function initScrollJack() {
           }
         },
         onDown: () => {
-          if (isAnimatingScroll) return;
+          if (isAnimatingScroll) {
+            queuedScrollDir = 1;
+            return;
+          }
 
           // Trigger on first overscroll if at the absolute bottom (5px threshold)
           const maxScroll = el.scrollHeight - el.clientHeight;
@@ -997,6 +1050,8 @@ function animateRoomIn(index) {
       );
       break;
   }
+
+  return tl;
 }
 
 function resetRoomContent(index) {
@@ -1356,6 +1411,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reveal hero room
     playIntroAnimation();
 
+    initGalleryRedesign();
     ScrollTrigger.refresh();
   });
 });
@@ -1370,3 +1426,131 @@ window.addEventListener("resize", () => {
     ScrollTrigger.refresh(true);
   }, 200);
 });
+
+/* ════════════════════════════════════════════════════════════
+   GALLERY REDESIGN LOGIC
+   ════════════════════════════════════════════════════════════ */
+function initGalleryRedesign() {
+  // Lightbox Logic
+  const triggers = document.querySelectorAll(".gallery-img-trigger");
+  const lightbox = document.getElementById("gallery-lightbox");
+  if (!lightbox || triggers.length === 0) return;
+
+  const lbImg = document.getElementById("lightbox-img");
+  const lbCurrent = document.getElementById("lightbox-current");
+  const lbClose = document.querySelector(".lightbox-close");
+  const lbNext = document.querySelector(".lightbox-next");
+  const lbPrev = document.querySelector(".lightbox-prev");
+  const lbThumbnailsContainer = document.getElementById("lightbox-thumbnails");
+
+  let currentIndex = 0;
+  const imageSources = Array.from(triggers).map((img) => img.src);
+
+  // Generate Thumbnails
+  if (lbThumbnailsContainer) {
+    lbThumbnailsContainer.innerHTML = "";
+    imageSources.forEach((src, idx) => {
+      const thumb = document.createElement("div");
+      thumb.className = "thumb-item";
+      thumb.dataset.index = idx;
+      thumb.innerHTML = `<img src="${src}" alt="Thumbnail ${idx + 1}" loading="lazy">`;
+      thumb.addEventListener("click", () => openLightbox(idx));
+      lbThumbnailsContainer.appendChild(thumb);
+    });
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lbImg.src = imageSources[currentIndex];
+    lbCurrent.innerText = currentIndex + 1;
+
+    // Update active thumbnail
+    if (lbThumbnailsContainer) {
+      const thumbs = lbThumbnailsContainer.querySelectorAll(".thumb-item");
+      thumbs.forEach((t) => t.classList.remove("is-active"));
+      if (thumbs[currentIndex]) {
+        const activeThumb = thumbs[currentIndex];
+        activeThumb.classList.add("is-active");
+        activeThumb.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      }
+    }
+
+    lightbox.classList.add("is-open");
+    if (typeof lenis !== "undefined") lenis.stop();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    if (typeof lenis !== "undefined") lenis.start();
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % imageSources.length;
+    openLightbox(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex =
+      (currentIndex - 1 + imageSources.length) % imageSources.length;
+    openLightbox(currentIndex);
+  }
+
+  triggers.forEach((trigger, idx) => {
+    trigger.addEventListener("click", () => {
+      openLightbox(idx);
+    });
+  });
+
+  if (lbClose) lbClose.addEventListener("click", closeLightbox);
+  if (lbNext) lbNext.addEventListener("click", nextImage);
+  if (lbPrev) lbPrev.addEventListener("click", prevImage);
+
+  // Close on background click
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.classList.contains("lightbox-bg")) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  window.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+  });
+
+  // Masonry Reveal Animation
+  const masonryItems = document.querySelectorAll(".masonry-item");
+  if (masonryItems.length > 0) {
+    const scrollContainer = document.querySelector(".gallery-scroll-container");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateZ(0) translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: scrollContainer,
+        threshold: 0.05,
+        rootMargin: "0px 0px 50px 0px",
+      },
+    );
+
+    masonryItems.forEach((item, i) => {
+      item.style.opacity = 0;
+      item.style.transform = "translateZ(0) translateY(40px)";
+      // Apply a staggered delay for the initial load based on index
+      item.style.transition = `opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${Math.min(i * 0.05, 0.3)}s, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${Math.min(i * 0.05, 0.3)}s`;
+      observer.observe(item);
+    });
+  }
+}

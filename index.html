@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
     <link rel="preload" as="image" href="assets/images/1-hero-wall.jpeg" />
-    <link rel="stylesheet" href="style.css?v=2.7" />
+    <link rel="stylesheet" href="style.css?v=2" />
   </head>
   <body>
     <!-- ═══ LOADER ═══════════════════════════════════════════════════════════════ -->
@@ -788,26 +788,23 @@
           </div>
           <div class="why-card" id="why-2">
             <span class="wc-num">02</span>
-            <h3>Ethical Sourcing</h3>
+            <h3>Premium Quality</h3>
             <p>
-              Every material sourced with full provenance — certified quarries
-              and sustainable mills only.
+             Daisy Decor uses the finest materials to ensure elegant and long-lasting interiors.
             </p>
           </div>
           <div class="why-card" id="why-3">
             <span class="wc-num">03</span>
-            <h3>White-Glove Installation</h3>
+            <h3>Innovative Designs</h3>
             <p>
-              Our craftsmen are trained in-house. No subcontractors — just
-              skilled hands and your trust.
+              We bring creativity and design ideas to make each space unique and functional.
             </p>
           </div>
           <div class="why-card" id="why-4">
             <span class="wc-num">04</span>
-            <h3>Design Consultation</h3>
+            <h3>Affordable Pricing</h3>
             <p>
-              Each project begins with an immersive consultation — mood boards,
-              material samples, spatial studies.
+              Daisy Decor offers competitive pricing without compromising on quality or style.
             </p>
           </div>
         </div>
@@ -816,14 +813,12 @@
 
     <!-- ═══════════════════════════════════════════════════════════════════════════
      ROOM 5 — GALLERY
-     Image: 5-gallery-wall.jpeg  |  Dark wood slat with gold geometric accent light
-     Doorway focal point: 35% 65% (lit room at corridor end)
      ═══════════════════════════════════════════════════════════════════════════ -->
     <section class="room" id="room-gallery" data-room="5">
       <div class="room-bg">
         <img
           src="assets/images/5-gallery-wall.jpeg"
-          alt="Dark charcoal wood slat wall with geometric gold accent light cuts in a luxury corridor leading to a warmly lit room"
+          alt="Dark charcoal wood slat wall"
           class="room-bg-img"
           data-origin="35% 65%"
           loading="lazy"
@@ -832,50 +827,41 @@
         <div class="room-curtain" aria-hidden="true"></div>
       </div>
 
-      <div class="room-content rc--center" id="gallery-content">
-        <div class="gallery-text">
-          <p class="section-eyebrow section-eyebrow--center">Visual Showcase</p>
-          <h2 class="section-title section-title--white gallery-title">
-            The Daisy Decor<br /><em>Gallery</em>
-          </h2>
-          <p class="gallery-sub">
-            Each installation, a confluence of material, light, and
-            intention.<br />
-            A surface that endures beyond the moment of its making.
-          </p>
-          <div class="gallery-thumbs">
-            <figure class="gt-fig" id="gt-1">
-              <img
-                src="assets/images/1-hero-wall.jpeg"
-                alt="Art Deco geometric gold wall panel"
-                loading="lazy"
-              />
-              <figcaption>Art Deco Series</figcaption>
-            </figure>
-            <figure class="gt-fig" id="gt-2">
-              <img
-                src="assets/images/2-service-wall.jpeg"
-                alt="Walnut wood slat wall"
-                loading="lazy"
-              />
-              <figcaption>Walnut Slat</figcaption>
-            </figure>
-            <figure class="gt-fig" id="gt-3">
-              <img
-                src="assets/images/4-why-chooseus-wall.jpeg"
-                alt="Sculptural wave wall"
-                loading="lazy"
-              />
-              <figcaption>Sculptural Relief</figcaption>
-            </figure>
-            <figure class="gt-fig" id="gt-4">
-              <img
-                src="assets/images/6-contact-wall.jpeg"
-                alt="Marble feature wall"
-                loading="lazy"
-              />
-              <figcaption>Calacatta Marble</figcaption>
-            </figure>
+      <!-- The Gallery is now a scrollable container inside the 100vh room -->
+      <div class="room-content rc--center gallery-scroll-container" id="gallery-content">
+        <div class="gallery-inner">
+          <div class="gallery-header">
+            <p class="section-eyebrow section-eyebrow--center">Our Work</p>
+            <h2 class="section-title section-title--white gallery-title">
+              Our Daisy Decor<br /><em>Gallery</em>
+            </h2>
+            <p class="gallery-sub">
+              Explore our latest decoration designs and interior work.
+            </p>
+          </div>
+
+          <!-- Masonry Gallery (20 Images - Reordered for Curation) -->
+          <div class="masonry-gallery">
+            <div class="masonry-item"><img src="assets/gallery/ho1.jpeg" loading="lazy" class="gallery-img-trigger" data-index="0" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho10.jpeg" loading="lazy" class="gallery-img-trigger" data-index="9" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho4.jpeg" loading="lazy" class="gallery-img-trigger" data-index="3" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho7.jpeg" loading="lazy" class="gallery-img-trigger" data-index="6" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho2.jpeg" loading="lazy" class="gallery-img-trigger" data-index="1" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho14.jpeg" loading="lazy" class="gallery-img-trigger" data-index="12" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho17.jpeg" loading="lazy" class="gallery-img-trigger" data-index="15" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho8.jpeg" loading="lazy" class="gallery-img-trigger" data-index="7" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho13.jpeg" loading="lazy" class="gallery-img-trigger" data-index="11" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho5.jpeg" loading="lazy" class="gallery-img-trigger" data-index="4" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho6.jpeg" loading="lazy" class="gallery-img-trigger" data-index="5" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho20.jpeg" loading="lazy" class="gallery-img-trigger" data-index="18" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho9.jpeg" loading="lazy" class="gallery-img-trigger" data-index="8" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho12.jpeg" loading="lazy" class="gallery-img-trigger" data-index="10" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho21.jpeg" loading="lazy" class="gallery-img-trigger" data-index="19" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho3.jpeg" loading="lazy" class="gallery-img-trigger" data-index="2" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho15.jpeg" loading="lazy" class="gallery-img-trigger" data-index="13" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho18.jpeg" loading="lazy" class="gallery-img-trigger" data-index="16" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho16.jpeg" loading="lazy" class="gallery-img-trigger" data-index="14" /></div>
+            <div class="masonry-item"><img src="assets/gallery/ho19.jpeg" loading="lazy" class="gallery-img-trigger" data-index="17" /></div>
           </div>
         </div>
       </div>
@@ -885,7 +871,7 @@
      ROOM 6 — CONTACT  (last room — no exit zoom)
      Image: 6-contact-wall.jpeg  |  Grand Calacatta marble + gold frame + green veining
      ═══════════════════════════════════════════════════════════════════════════ -->
-    <section class="room room--last" id="room-contact" data-room="6">
+    <section class="room" id="room-contact" data-room="6">
       <div class="room-bg">
         <img
           src="assets/images/6-contact-wall.jpeg"
@@ -907,18 +893,18 @@
           <div class="contact-details">
             <div class="cd-row" id="cd-studio">
               <span class="cd-label">Studio</span>
-              <span class="cd-value">D3 Design District, Dubai, UAE</span>
+              <span class="cd-value">Chanda Lok Parisar Boirdadar road raigarh Chhattisgarh</span>
             </div>
             <div class="cd-row" id="cd-email">
               <span class="cd-label">Email</span>
-              <a href="mailto:hello@daisydecor.com" class="cd-value cd-link"
-                >hello@daisydecor.com</a
+              <a href="mailto:daisydecorindia@gmail.com" class="cd-value cd-link"
+                >daisydecorindia@gmail.com</a
               >
             </div>
             <div class="cd-row" id="cd-phone">
               <span class="cd-label">Phone</span>
-              <a href="tel:+97141234567" class="cd-value cd-link"
-                >+971 4 123 4567</a
+              <a href="tel:+91 8359908925" class="cd-value cd-link"
+                >+91 8359908925</a
               >
             </div>
           </div>
@@ -994,34 +980,41 @@
       </div>
     </section>
 
-    <!-- ═══ FOOTER ═══════════════════════════════════════════════════════════════ -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img
-            src="assets/images/logo.png"
-            alt="Daisy Decor Logo"
-            class="footer-logo-img"
-          />
-          <p class="footer-tag">Surfaces that speak. Spaces that endure.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#room-services">Services</a>
-          <a href="#room-products">Products</a>
-          <a href="#room-about">About</a>
-          <a href="#room-gallery">Gallery</a>
-          <a href="#room-contact">Contact</a>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Daisy Decor. All rights reserved.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+     ROOM 7 — FOOTER
+     ═══════════════════════════════════════════════════════════════════════════ -->
+    <section class="room room--last" id="room-footer" data-room="7">
+      <div class="room-bg" style="background: var(--dark-2);"></div>
+      <div class="room-content" id="footer-content">
+        <footer class="footer">
+          <div class="footer-inner">
+            <div class="footer-brand">
+              <img
+                src="assets/images/logo.png"
+                alt="Daisy Decor Logo"
+                class="footer-logo-img"
+              />
+              <p class="footer-tag">Surfaces that speak. Spaces that endure.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="#room-services">Services</a>
+              <a href="#room-products">Products</a>
+              <a href="#room-about">About</a>
+              <a href="#room-gallery">Gallery</a>
+              <a href="#room-contact">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 Daisy Decor. All rights reserved.</p>
+          </div>
+        </footer>
       </div>
-    </footer>
+    </section>
 
     <!-- Quick Contact Widget -->
     <div class="contact-fab-container" id="contact-fab-container">
       <div class="contact-fab-buttons">
         <!-- Call Button -->
         <a
-          href="tel:+97141234567"
+          href="tel:+918359908925"
           class="fab-btn fab-btn--call"
           aria-label="Call Us Now"
         >
@@ -1044,7 +1037,7 @@
         </a>
         <!-- WhatsApp Button -->
         <a
-          href="https://wa.me/97141234567"
+          href="https://wa.me/+918359908925"
           target="_blank"
           rel="noopener noreferrer"
           class="fab-btn fab-btn--whatsapp"
@@ -1057,13 +1050,12 @@
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
           >
             <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+              fill="currentColor"
             />
           </svg>
         </a>
@@ -1109,10 +1101,31 @@
       </button>
     </div>
 
+    <!-- ═══ LIGHTBOX ══════════════════════════════════════════════════════════════ -->
+    <div id="gallery-lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-bg"></div>
+      <button class="lightbox-close" aria-label="Close lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="lightbox-counter"><span id="lightbox-current">1</span> / 20</div>
+      <button class="lightbox-nav lightbox-prev" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="lightbox-nav lightbox-next" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="Gallery Lightbox Image" id="lightbox-img" />
+      </div>
+      <div class="lightbox-thumbnails" id="lightbox-thumbnails">
+        <!-- Thumbnails injected via JS -->
+      </div>
+    </div>
+
     <!-- ═══ SCRIPTS ═══════════════════════════════════════════════════════════════ -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>

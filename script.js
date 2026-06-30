@@ -44,6 +44,7 @@ let isAnimatingScroll = false;
 let queuedScrollDir = 0;
 let roomLabelTimeout;
 const rooms = document.querySelectorAll(".room");
+let productsInitialized = false;
 
 /* ════════════════════════════════════════════════════════════
    3. LOADER ANIMATION
@@ -387,7 +388,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "EXCLUSIVE WALL DECOR";
           titleEl.innerHTML = "Redefine Your Space With Customized Wallpapers";
           descEl.innerHTML =
-            "At Daisy Decor, we create premium customized wallpapers that transform ordinary walls into stunning design statements.";
+            `At <span class="brand-text">Daisy Decor</span>, we create premium customized wallpapers that transform ordinary walls into stunning design statements.`;
           const imgs = [
             "assets/service-cards/s4.jpeg",
             "assets/service-cards/s5.jpeg",
@@ -406,7 +407,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "PREMIUM SURFACE SOLUTIONS";
           titleEl.innerHTML = "Elegant Marble Sheets For Modern Interiors";
           descEl.innerHTML =
-            "At Daisy Decor, we offer high-quality marble sheets designed to deliver luxury aesthetics with long lasting durability.";
+            `At <span class="brand-text">Daisy Decor</span>, we offer high-quality marble sheets designed to deliver luxury aesthetics with long lasting durability.`;
           const imgs = [
             "assets/service-cards/s7.jpg",
             "assets/service-cards/s8.jpg",
@@ -430,7 +431,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "MODERN CEILING SOLUTIONS";
           titleEl.innerHTML = "Elegant Foam Sheet False Ceiling";
           descEl.innerHTML =
-            "Daisy Decor offers premium foam sheets solutions crafted for stylish false ceiling and wall designs.";
+            `<span class="brand-text">Daisy Decor</span> offers premium foam sheets solutions crafted for stylish false ceiling and wall designs.`;
           const imgs = [
             "assets/service-cards/s10.jpg",
             "assets/service-cards/s28.jpg",
@@ -447,7 +448,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "PREMIUM FLOORING SOLUTIONS";
           titleEl.innerHTML = "Durable & Stylish WPC Flooring Sheets";
           descEl.innerHTML =
-            "Daisy Decor offers high quality WPC (Wood Plastic Composite) flooring sheets designed to bring durability, elegance, and modern appeal to interiors. These panels are water-resistant, termite-proof, and ideal for homes, offices, showrooms, and commercial spaces.";
+            `<span class="brand-text">Daisy Decor</span> offers high quality WPC (Wood Plastic Composite) flooring sheets designed to bring durability, elegance, and modern appeal to interiors. These panels are water-resistant, termite-proof, and ideal for homes, offices, showrooms, and commercial spaces.`;
           const imgs = [
             "assets/service-cards/s27.jpeg",
             "assets/product-section/floor-sheet-imgs/fs1.jpeg",
@@ -465,7 +466,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "Luxury Floor Décor";
           titleEl.innerHTML = "Premium Carpets for Elegant Interiors";
           descEl.innerHTML =
-            "Add warmth, comfort, and style to your interiors with Daisy Decor’s premium carpet collection. Our carpets are designed to enhance indoor spaces with rich textures, modern patterns, and long-lasting quality, perfect for homes, offices, hotels, and commercial spaces.";
+            `Add warmth, comfort, and style to your interiors with <span class="brand-text">Daisy Decor</span>’s premium carpet collection. Our carpets are designed to enhance indoor spaces with rich textures, modern patterns, and long-lasting quality, perfect for homes, offices, hotels, and commercial spaces.`;
           const imgs = [
             "assets/product-section/carpet-imgs/car1.webp",
             "assets/product-section/carpet-imgs/car2.jpeg",
@@ -483,11 +484,11 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "Green Décor Solutions";
           titleEl.innerHTML = "Premium Artificial Grass for All Spaces";
           descEl.innerHTML =
-            "Bring nature-inspired beauty to your surroundings with Daisy Decor’s high-quality artificial grass. Designed for both indoor and outdoor use, our grass solutions offer a lush green look without watering, trimming, or maintenance. Perfect for homes, balconies, gardens, terraces, offices, and commercial spaces.";
+            `Bring nature-inspired beauty to your surroundings with <span class="brand-text">Daisy Decor</span>’s high-quality artificial grass. Designed for both indoor and outdoor use, our grass solutions offer a lush green look without watering, trimming, or maintenance. Perfect for homes, balconies, gardens, terraces, offices, and commercial spaces.`;
           const imgs = [
-            "assets/service-cards/grass3.jpeg",
             "assets/service-cards/s22.png",
             "assets/service-cards/s23.jpg",
+            "assets/service-cards/grass3.jpeg",
           ];
           imgs.forEach((img, i) => {
             gridContainer.innerHTML += `
@@ -501,7 +502,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "Luxury Stone Finish";
           titleEl.innerHTML = "Premium PU Stone for Modern Interiors";
           descEl.innerHTML =
-            "Daisy Decor brings you high-quality PU Stone panels that combine the beauty of natural stone with lightweight durability.";
+            `<span class="brand-text">Daisy Decor</span> brings you high-quality PU Stone panels that combine the beauty of natural stone with lightweight durability.`;
           const imgs = [
             "assets/product-section/pu-imgs/npu3.jpg",
             "assets/product-section/pu-imgs/npu4.jpg",
@@ -525,7 +526,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "Modern Wall Décor";
           titleEl.innerHTML = "Transform Your Space with 3D Wall Panels";
           descEl.innerHTML =
-            "Daisy Decor offers premium 3D wall panels designed to add depth, texture, and elegance to your interiors.";
+            `<span class="brand-text">Daisy Decor</span> offers premium 3D wall panels designed to add depth, texture, and elegance to your interiors.`;
           const imgs = [
             "assets/product-section/3d-imgs/3dn13.png",
             "assets/product-section/3d-imgs/3dn14.png",
@@ -547,7 +548,7 @@ function initProductDetails() {
           titleEl.innerHTML =
             "Enhance Your Interiors with Mosaic Acrylic Panels";
           descEl.innerHTML =
-            "Daisy Decor offers premium mosaic acrylic panels that bring a refined and contemporary touch to your interiors.";
+            `<span class="brand-text">Daisy Decor</span> offers premium mosaic acrylic panels that bring a refined and contemporary touch to your interiors.`;
           const imgs = [
             "assets/service-cards/s16.jpeg",
             "assets/service-cards/s17.jpg",
@@ -564,7 +565,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "Elegant Glass Décor";
           titleEl.innerHTML = "Enhance Your Walls with Mosaic Glass Panels";
           descEl.innerHTML =
-            "Daisy Decor presents premium mosaic glass panels designed to bring elegance, shine, and artistic beauty to your interiors.";
+            `<span class="brand-text">Daisy Decor</span> presents premium mosaic glass panels designed to bring elegance, shine, and artistic beauty to your interiors.`;
           const imgs = [
             "assets/product-section/mosaic-glass/mo3.jpg",
             "assets/product-section/mosaic-glass/mo4.jpg",
@@ -589,7 +590,7 @@ function initProductDetails() {
           titleEl.innerHTML =
             "Strong, Stylish & Long-Lasting PVC / WPC Solutions";
           descEl.innerHTML =
-            "Daisy Decor offers premium PVC and WPC sheets designed for modern and durable interiors.";
+            `<span class="brand-text">Daisy Decor</span> offers premium PVC and WPC sheets designed for modern and durable interiors.`;
           const imgs = [
             "assets/product-section/pvc-imgs/npvc1.png",
             "assets/product-section/pvc-imgs/npvc2.png",
@@ -611,7 +612,7 @@ function initProductDetails() {
           titleEl.innerHTML =
             "Enhance Privacy & Style with Premium Glass Films";
           descEl.innerHTML =
-            "Daisy Decor offers a wide range of premium glass films designed to enhance privacy while adding elegance to your interiors.";
+            `<span class="brand-text">Daisy Decor</span> offers a wide range of premium glass films designed to enhance privacy while adding elegance to your interiors.`;
           const imgs = [
             "assets/product-section/product-bg/ps13.png",
             "assets/product-section/glass-film-imgs/g2.png",
@@ -630,7 +631,7 @@ function initProductDetails() {
           eyebrowEl.innerHTML = "Interior Enhancement";
           titleEl.innerHTML = "Transform Your Space with Stylish Moldings";
           descEl.innerHTML =
-            "Daisy Decor provides premium quality decorative moldings that add depth, elegance, and character to walls, ceilings, and interiors.";
+            `<span class="brand-text">Daisy Decor</span> provides premium quality decorative moldings that add depth, elegance, and character to walls, ceilings, and interiors.`;
           const imgs = [
             "assets/product-section/moulding-imgs/molding1.jpg",
             "assets/product-section/moulding-imgs/molding2.jpg",
@@ -971,28 +972,26 @@ function animateRoomIn(index) {
       break;
 
     case 3: // Products
-      const productsListWrapper = document.querySelector(
-        ".products-list-wrapper",
-      );
-      if (productsListWrapper) productsListWrapper.scrollTop = 0;
-
-      tl.fromTo(
-        "#products-panel",
-        { autoAlpha: 0, x: 50 },
-        { autoAlpha: 1, x: 0, duration: 0.65, ease: "power3.out" },
-      );
-      tl.fromTo(
-        "#products-panel .product-showcase",
-        { autoAlpha: 0, y: 25 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.55,
-          ease: "power2.out",
-          stagger: 0.1,
-        },
-        "-=0.35",
-      );
+      if (!productsInitialized) {
+        tl.fromTo(
+          "#products-panel",
+          { autoAlpha: 0, x: 50 },
+          { autoAlpha: 1, x: 0, duration: 0.65, ease: "power3.out" },
+        );
+        tl.fromTo(
+          "#products-panel .product-showcase",
+          { autoAlpha: 0, y: 25 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.55,
+            ease: "power2.out",
+            stagger: 0.1,
+          },
+          "-=0.35",
+        );
+        productsInitialized = true;
+      }
       break;
 
     case 4: // Why Us
@@ -1079,12 +1078,14 @@ function resetRoomContent(index) {
       gsap.set(".service-card", { autoAlpha: 0 });
       break;
     case 3: // Products
-      gsap.set("#products-panel", { autoAlpha: 0, x: 60, scale: 1 });
-      gsap.set("#products-panel .product-showcase", { autoAlpha: 0, y: 35 });
-      gsap.set("#product-details-panel", {
-        autoAlpha: 0,
-        clipPath: "inset(0 0 0 100%)",
-      });
+      if (!productsInitialized) {
+        gsap.set("#products-panel", { autoAlpha: 0, x: 60, scale: 1 });
+        gsap.set("#products-panel .product-showcase", { autoAlpha: 0, y: 35 });
+        gsap.set("#product-details-panel", {
+          autoAlpha: 0,
+          clipPath: "inset(0 0 0 100%)",
+        });
+      }
       break;
     case 4: // Why Us
       gsap.set(".whyus-header", { autoAlpha: 0, y: 35 });
